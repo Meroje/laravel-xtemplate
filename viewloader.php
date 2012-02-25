@@ -13,7 +13,7 @@ class ViewLoader extends Laravel\View {
 
 		$root = Laravel\Bundle::path(Laravel\Bundle::name($view)).'views/';
 
-		if (file_exists($path = $root.Laravel\Bundle::element($view).Laravel\Config::get('xtemplate::xtemplate.extension')))
+		if (file_exists($path = $root.Laravel\Bundle::element($view).EXT))
 		{
 			return $path;
 		}

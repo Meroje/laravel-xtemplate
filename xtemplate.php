@@ -36,7 +36,7 @@ namespace XTemplate
 
 			$root = Laravel\Bundle::path(Laravel\Bundle::name($view)).'templates/';
 
-			$path = $root.Laravel\Bundle::element($view).Laravel\Config::get('xtemplate::xtemplate.tpl');
+			$path = $root.Laravel\Bundle::element($view).'.html';
 			
 			parent::__construct($path, $objEngine);
 		}
