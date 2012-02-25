@@ -56,4 +56,4 @@ class Home_Index extends XTemplate
 }
 ```
 
-The **TEMPLATE** constant is from the **ComfortView** class, it is used to set the file XTemplate will use, in the folder **templates**. You need to create this folder next to **views** in your bundle or application. The **TEMPLATE** file is located followinf original Laravel loading of views.
+The **TEMPLATE** constant is from the **ComfortView** class, it is used to set the file XTemplate will use, in the folder **templates**. You need to create this folder next to **views** in your bundle or application. The **TEMPLATE** file is located following original Laravel loading of views.
