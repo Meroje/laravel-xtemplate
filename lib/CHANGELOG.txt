@@ -1,0 +1,24 @@
+2012-01-21      08d84d093f79                New x:template design
+2012-01-20      125a7f47c574                DOM Charset and DOM version can no longer be configured. Fixed: 1.0/utf-8
+2012-01-20      2d95ca8915ea                Tutorial: Extending x:template
+2012-01-16      a9a972367994                DOMElement supports now the selectors too
+2012-01-16      a9a972367994                Included tutorial which is built automatically
+2012-01-16      a9a972367994                Automated engine builder
+2012-01-11      e06f9517ac5c                Added the STRICT_MODE and the model interface
+2012-01-08      f122ec984202                New selectors: Attr(^=, $=) Path(:first-child, :last-child)
+2012-01-08      8783c98fb444                Fixed bug: The __toString() method must not throw any exception
+2012-01-08      ee3ec88b2d0f                Added selector conjunctions: +, >, ~, Added new test case for conjunctions
+2012-01-07      814b9ada31d0                Created a new selector parser
+2012-01-07      814b9ada31d0                Fixed bug: Error when using several <xinclude />-Tags
+2011-12-14      7438a9c5a6e8                Better doc for the NodeEdit Interface
+2011-12-14      7438a9c5a6e8                Added place for examples
+2011-12-14      d34f9ed9c550                jQuery hint in the README.txt file
+2011-12-14      d34f9ed9c550                Removed headline image from the HTML test suite
+2011-12-14      a1926eafff5c                Optimized shell output
+2011-12-14      f7acd11f1701                Added testcase descriptions
+2011-12-14      f7acd11f1701                Fixes XML bug, when adding CDATA Children
+2011-12-13      b685b3b0c053                Central method to perform tests with result files. Whitespaces and 
+                                            linebreaks are no longer compared in the tests. 
+2011-12-12      7ed62809064f                Added a shell script to perform the tests
+2011-12-11      755ed0ed326e                Added better support to access the engine instance and configuration
+2011-12-11      755ed0ed326e                Fixed bug when extending the default configuration

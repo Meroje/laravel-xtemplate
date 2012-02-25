@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    This is the default configuration file for the x:template engine. You should not apply any modifications here since
+    some system critical settings are made here. If you want to create your own configuration, you can extend this one. 
+    
+    author: Tobias Pohlen
+-->
+<x:config xmlns:x="http://xtemplate.net/xmlns.html">
+    <x:interpretors name="interpretors">
+        <interpretor name="autoloader">XTemplate\Core\ConfigInterpretors\Autoloader</interpretor>
+        <interpretor name="overload">XTemplate\Core\ConfigInterpretors\Overload</interpretor>
+        <interpretor name="config">XTemplate\Core\ConfigInterpretors\Config</interpretor>
+        <interpretor name="settings">XTemplate\Core\ConfigInterpretors\Settings</interpretor>
+        <interpretor name="parsers">XTemplate\Core\ConfigInterpretors\Parsers</interpretor>
+        <interpretor name="selectors">XTemplate\Core\ConfigInterpretors\Selectors</interpretor>
+    </x:interpretors>
+    
+    <x:overload name="overload">
+        <overload name="DOMElement">XTemplate\DOMElement</overload>
+        <overload name="DOMDocument">XTemplate\View</overload>
+    </x:overload>
+    
+    <x:autoloader name="mainautoloader">
+        <file class="XTemplate\ComfortView">ComfortView.php</file>
+        <file class="XTemplate\DOMElement">DOMElement.php</file>
+        <file class="XTemplate\DOMNode">DOMNode.php</file>
+        <file class="XTemplate\ElementList">ElementList.php</file>
+        <file class="XTemplate\Section">Section.php</file>
+        <file class="XTemplate\View">View.php</file>
+        <file class="XTemplate\Builder">Builder.php</file>
+        <file class="XTemplate\Exceptions\SectionizeException">Exceptions/SectionizeException.php</file>
+        <file class="XTemplate\Exceptions\RenderException">Exceptions/RenderException.php</file>
+        <file class="XTemplate\Exceptions\ElementListException">Exceptions/ElementListException.php</file>
+        <file class="XTemplate\Exceptions\NodeEditException">Exceptions/NodeEditException.php</file>
+        <file class="XTemplate\Exceptions\TemplateException">Exceptions/TemplateException.php</file>
+        <file class="XTemplate\Exceptions\ModelException">Exceptions/ModelException.php</file>
+        <file class="XTemplate\Exceptions\BuildException">Exceptions/BuildException.php</file>
+        <file class="XTemplate\Interfaces\NodeEdit">Interfaces/NodeEdit.php</file>
+        <file class="XTemplate\Interfaces\Selector">Interfaces/Selector.php</file>
+        <file class="XTemplate\Parsers\Exceptions\ParsingException">Parsers/Exceptions/ParsingException.php</file>
+        <file class="XTemplate\Parsers\Base">Parsers/Base.php</file>
+        <file class="XTemplate\Parsers\XInclude">Parsers/XInclude.php</file>
+        <file class="XTemplate\Parsers\RemoveXID">Parsers/RemoveXID.php</file>
+        <file class="XTemplate\Selectors\Exceptions\SelectorException">Selectors/Exceptions/SelectorException.php</file>
+        <file class="XTemplate\Selectors\Parser">Selectors/Parser.php</file>
+        <file class="XTemplate\Selectors\SelectorModel">Selectors/SelectorModel.php</file>
+        <file class="XTemplate\Selectors\PathSelectorBase">Selectors/PathSelectorBase.php</file>
+        <file class="XTemplate\Selectors\AttributeSelectorBase">Selectors/AttributeSelectorBase.php</file>
+        <file class="XTemplate\Selectors\ConjunctionSelectorBase">Selectors/ConjunctionSelectorBase.php</file>
+        <file class="XTemplate\Selectors\PathClassName">Selectors/PathClassName.php</file>
+        <file class="XTemplate\Selectors\PathID">Selectors/PathID.php</file>
+        <file class="XTemplate\Selectors\PathChild">Selectors/PathChild.php</file>
+        <file class="XTemplate\Selectors\AttributeContain">Selectors/AttributeContain.php</file>
+        <file class="XTemplate\Selectors\AttributeEqual">Selectors/AttributeEqual.php</file>
+        <file class="XTemplate\Selectors\AttributeSubstr">Selectors/AttributeSubstr.php</file>
+        <file class="XTemplate\Selectors\AttributeUnequal">Selectors/AttributeUnequal.php</file>
+        <file class="XTemplate\Selectors\AttributeStartsWith">Selectors/AttributeStartsWith.php</file>
+        <file class="XTemplate\Selectors\AttributeEndsWith">Selectors/AttributeEndsWith.php</file>
+        <file class="XTemplate\Selectors\ConjunctionDirectSibling">Selectors/ConjunctionDirectSibling.php</file>
+        <file class="XTemplate\Selectors\ConjunctionDirectChild">Selectors/ConjunctionDirectChild.php</file>
+        <file class="XTemplate\Selectors\ConjunctionPrecededSibling">Selectors/ConjunctionPrecededSibling.php</file>
+        <file class="XTemplate\Tutorial\MainTemplate">Tutorial/MainTemplate.php</file>
+        <file class="XTemplate\Tutorial\TutorialTemplate">Tutorial/TutorialTemplate.php</file>
+        <file class="XTemplate\Tutorial\IndexNode">Tutorial/IndexNode.php</file>
+        <file class="XTemplate\Tutorial\IndexTemplate">Tutorial/IndexTemplate.php</file>
+        <file class="XTemplate\Tutorial\IndexOverviewTemplate">Tutorial/IndexOverviewTemplate.php</file>
+    </x:autoloader>
+    
+    <x:parsers name="parsers">
+        <parser position="pre">XTemplate\Parsers\XInclude</parser>
+        <parser position="post">XTemplate\Parsers\RemoveXID</parser>
+    </x:parsers>
+    
+    <x:selectors name="selectors">
+        <path operator="#">XTemplate\Selectors\PathID</path>
+        <path operator=".">XTemplate\Selectors\PathClassName</path>
+        <path operator=":">XTemplate\Selectors\PathChild</path>
+        <attribute operator="=">XTemplate\Selectors\AttributeEqual</attribute>
+        <attribute operator="~=">XTemplate\Selectors\AttributeContain</attribute>
+        <attribute operator="!=">XTemplate\Selectors\AttributeUnequal</attribute>
+        <attribute operator="*=">XTemplate\Selectors\AttributeSubstr</attribute>
+        <attribute operator="^=">XTemplate\Selectors\AttributeStartsWith</attribute>
+        <attribute operator="$=">XTemplate\Selectors\AttributeEndsWith</attribute>
+        <conjunction operator="+">XTemplate\Selectors\ConjunctionDirectSibling</conjunction>
+        <conjunction operator=">">XTemplate\Selectors\ConjunctionDirectChild</conjunction>
+        <conjunction operator="~">XTemplate\Selectors\ConjunctionPrecededSibling</conjunction>
+    </x:selectors>
+</x:config>
